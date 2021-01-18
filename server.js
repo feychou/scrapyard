@@ -2,7 +2,6 @@ require('dotenv').config()
 require('colors');
 const express = require("express");
 const cors = require('cors');
-const cookieParser = require('cookie-parser');
 
 const connectDB = require('./dbinit');
 const users = require('./api/users');
@@ -20,7 +19,6 @@ if (process.env.NODE_ENV === 'dev') {
 }
 
 app.use(express.json());
-app.use(cookieParser());
 app.use('/users', users);
 app.use('/orders', orders);
 app.use('/auth', auth);

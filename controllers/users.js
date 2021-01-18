@@ -103,6 +103,14 @@ const getUserOrders = async (req, res, next) => {
   }
 };
 
+const getMe = async (req, res, next) => {
+  const user = await User.findById(req.user.id);
+
+  res.json({
+    success: true,
+    data: user
+  });
+}
 
 module.exports = {
   getUsers,
@@ -111,5 +119,6 @@ module.exports = {
   updateUser,
   deleteUser,
   getUserOrders,
-  login
+  login,
+  getMe
 }

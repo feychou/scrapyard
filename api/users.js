@@ -7,6 +7,7 @@ const {
   deleteUser,
   getUserOrders
 } = require('../controllers/users');
+const protect = require('../middleware/auth');
 
 const api = express.Router();
 
@@ -16,13 +17,13 @@ api
 
 api
   .route('/:id')
-  .get(getUser)
-  .put(updateUser)
-  .delete(deleteUser)
+  .get(protect, getUser)
+  .put(protect, updateUser)
+  .delete(protect, deleteUser)
 
 // locahost:5000/users/:id/orders
 api
   .route('/:id/orders')
-  .get(getUserOrders)
+  .get(protect, getUserOrders)
 
 module.exports = api;
