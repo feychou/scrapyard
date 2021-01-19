@@ -1,4 +1,4 @@
-# node mongoose boilerplate
+# scrapyard
 
 ```
 curl -d '{"username": "zubat", "email": "zubat@pokemon.com", "password": "iamthenight"}' -H "Content-Type: application/json" -X POST http://localhost:5000/auth/register
