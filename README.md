@@ -17,5 +17,3 @@ curl -d '{"price": 10, "user": 2}' -H "Content-Type: application/json" -X POST h
 curl -d '{"price": 12, "user": 5}' -H "Content-Type: application/json" -X PUT http://localhost:3000/orders/5
 curl -X DELETE http://localhost:3000/users/5f4d7587bf290843cc1e7f95
 ```
-
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTA5OTc1NDR9.8jy0ew1VrzFW7y05Drudy6UJPgbYHzrayf6TVQk1fTI
