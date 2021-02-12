@@ -1,6 +1,6 @@
 # scrapyard
 
-A server with simple auth.
+A simple auth server.
 
 ## Setup
 
