@@ -45,17 +45,20 @@ const login = async (req, res, next) => {
 
     if (!email || !password) {
       res.status(400).send('Please provide an email and password')
+      return;
     }
 
     const user = await User.findOne({ email }).select('+password');
 
     if (!user) {
       res.status(401).send('Invalid credentials')
+      return;
     }
 
     const doesPassMatch = await user.matchPassword(password);
     if (!doesPassMatch) {
       res.status(401).send('Invalid credentials')
+      return;
     }
 
     const token = user.getSignedJwtToken();
